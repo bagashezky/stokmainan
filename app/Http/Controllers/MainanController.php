@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Mainan;
 class MainanController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class MainanController extends Controller
      */
     public function index()
     {
-        //
+        $mainans = Mainan::all();
+
+        return view('index', compact('mainans'));
     }
 
     /**
@@ -34,7 +36,14 @@ class MainanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'mainan_name' => 'required|max:255',
+            'mainan_stok' => 'required|alpha_num',
+            'mainan_price' => 'required|numeric'
+        ]);
+        $mainan = Mainan::create($validatedData);
+
+        return redirect('/mainans')->with('success', 'Stok Berhasil Disimpan');
     }
 
     /**
@@ -56,7 +65,9 @@ class MainanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mainan = Mainan::findOrFail($id);
+
+        return view('edit', compact('mainan'));
     }
 
     /**
@@ -68,7 +79,14 @@ class MainanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'mainan_name' => 'required|max:255',
+            'mainan_stok' => 'required|alpha_num',
+            'mainan_price' => 'required|numeric',
+        ]);
+        Mainan::whereId($id)->update($validatedData);
+
+        return redirect('/mainans')->with('success', 'Stok Telah diupdate');
     }
 
     /**
@@ -79,6 +97,9 @@ class MainanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $mainan = Mainan::findOrFail($id);
+        $mainan->delete();
+
+        return redirect('/mainans')->with('success', 'Stok telah dihapus');
     }
 }

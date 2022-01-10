@@ -1,4 +1,4 @@
-<!-- create.blade.php -->
+<!-- edit.blade.php -->
 
 @extends('layout')
 
@@ -10,7 +10,7 @@
 </style>
 <div class="card uper">
   <div class="card-header">
-    Tambah Mainan
+    Edit Mainan
   </div>
   <div class="card-body">
     @if ($errors->any())
@@ -22,21 +22,22 @@
         </ul>
       </div><br />
     @endif
-      <form method="post" action="{{ route('mainans.store') }}">
+      <form method="post" action="{{ route('mainans.update', $mainan->id) }}">
           <div class="form-group">
               @csrf
+              @method('PATCH')
               <label for="name">Nama Mainan:</label>
-              <input type="text" class="form-control" name="mainan_name"/>
+              <input type="text" class="form-control" name="mainan_name" value="{{$mainan->mainan_name}}"/>
           </div>
           <div class="form-group">
               <label for="price">Jumlah Stok :</label>
-              <input type="text" class="form-control" name="mainan_stok"/>
+              <input type="text" class="form-control" name="mainan_stok" value="{{$mainan->mainan_stok}}"/>
           </div>
           <div class="form-group">
               <label for="quantity">Harga :</label>
-              <input type="text" class="form-control" name="mainan_price"/>
+              <input type="text" class="form-control" name="mainan_price" value="{{$mainan->mainan_price}}"/>
           </div>
-          <button type="submit" class="btn btn-primary">Tambah</button>
+          <button type="submit" class="btn btn-primary">Update Mainan</button>
       </form>
   </div>
 </div>

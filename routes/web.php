@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('mainan', 'MainanController');
+Route::resource('mainans', 'MainanController');
