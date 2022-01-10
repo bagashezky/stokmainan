@@ -34,7 +34,7 @@
           </div>
           <div class="form-group">
               <label for="quantity">Harga Mainan :</label>
-              <input type="text" class="form-control" name="mainanna_harga"/>
+              <input type="text" class="form-control" name="mainan_harga"/>
           </div>
           <button type="submit" class="btn btn-primary">Create</button>
       </form>

@@ -23,7 +23,7 @@ class MainanController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
