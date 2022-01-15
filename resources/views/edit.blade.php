@@ -1,6 +1,6 @@
 <!-- edit.blade.php -->
 
-@extends('layout')
+@extends('admin.layout')
 
 @section('content')
 <style>

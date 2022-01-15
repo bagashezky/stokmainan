@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::resource('mainans', 'MainanController');
+Route::resource('/admin/product', 'ProductController');
 
 Auth::routes();
 
