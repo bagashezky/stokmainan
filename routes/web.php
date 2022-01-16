@@ -16,10 +16,13 @@ Route::get('/', function () {
 });
 
 Route::resource('mainans', 'MainanController');
-Route::resource('/admin/product', 'ProductController');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index');
+Route::get('/admin/dashboard', 'DashboardController@index');
+Route::resource('/admin/product', 'ProductController');
+
 

@@ -66,7 +66,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 <!-- jQuery -->
 <script src="{{ asset('lte/plugins/jquery/jquery.min.js')}}"></script>

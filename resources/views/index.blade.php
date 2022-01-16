@@ -11,7 +11,7 @@
 <div class="uper">
   @if(session()->get('success'))
     <div class="alert alert-success">
-      {{ session()->get('success') }}  
+      {{ session()->get('success') }}
     </div><br />
   @endif
   <table class="table table-striped">
@@ -41,7 +41,7 @@
             </td>
         </tr>
         @endforeach
-        
+
     </tbody>
   </table>
 
@@ -52,7 +52,7 @@
     <button class="btn btn-danger" type="submit">
         <a class="dropdown-item" href="{{ route('logout') }}"
            onclick="event.preventDefault();
-                         document.getElementById('logout-form').submit();">
+            document.getElementById('logout-form').submit();">
             {{ __('Logout') }}
         </a>
 
