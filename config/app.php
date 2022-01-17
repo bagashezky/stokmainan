@@ -166,7 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Yajra\DataTables\DataTablesServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -190,6 +190,7 @@ return [
     */
 
     'aliases' => [
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Form' => Collective\Html\FormFacode::class,
         'Html' => Collective\Html\HtmlFacode::class,
         'App' => Illuminate\Support\Facades\App::class,

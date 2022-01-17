@@ -12,9 +12,9 @@
         <div class="card">
             <!-- /.card-header -->
             <div class="card-header">
-                <h3 class="card-title">Data Mainan</h3>
+                <h3 class="card-title">Kategori</h3>
                 <div class="card-tools">
-                 <a href="{{ URL::to('/admin/product/create')}}" class="btn btn-tool">
+                 <a href="{{ URL::to('/admin/category/create')}}" class="btn btn-tool">
                      <i class="fa fa-plus"></i>
                      &nbsp; Add
                  </a>
@@ -32,28 +32,22 @@
                             <tr class="text-center">
                                 <th>ID</th>
                                 <th>Nama</th>
-                                <th>Harga</th>
-                                <th>Keterangan</th>
-                                <th>Gambar</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($products as $product)
+                            @foreach($categories as $category)
                             <tr>
-                                <td class="text-center">{{ $product['id'] }}</td>
-                                <td>{{ $product['name'] }}</td>
-                                <td>Rp. {{ $product['price'] }}</td>
-                                <td>{{ $product['description'] }}</td>
+                                <td class="text-center">{{ $category['id'] }}</td>
+                                <td>{{ $category['name'] }}</td>
 
-                                <td class="text-center"><img src="{{ asset('storage/'.$product['image']) }}" width="100"/></td>
                                 <td class="text-center">
-                                    <form method="POST" action="{{ URL::to('/admin/product/'.$product['id']) }}">
+                                    <form method="POST" action="{{ URL::to('/admin/product/'.$category['id']) }}">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="_method" value="DELETE" />
                                         <div class="btn-group">
-                                            <a class="btn btn-info" href="{{ URL::to('/admin/product/'.$product['id']) }}"><i class="fa fa-eye"></i></a>
-                                            <a class="btn btn-success" href="{{ URL::to('/admin/product/'.$product['id'].'/edit') }}"><i class="fa fa-edit"></i></a>
+                                            <a class="btn btn-info" href="{{ URL::to('/admin/product/'.$category['id']) }}"><i class="fa fa-eye"></i></a>
+                                            <a class="btn btn-success" href="{{ URL::to('/admin/product/'.$category['id'].'/edit') }}"><i class="fa fa-edit"></i></a>
                                             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                         </div>
                                     </form>

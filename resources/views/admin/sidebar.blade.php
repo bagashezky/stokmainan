@@ -33,11 +33,22 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             <a href="{{URL::to('admin/product')}}" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
                 Data Barang
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{URL::to('admin/category')}}" class="nav-link">
+              <i class="nav-icon fa fa-archive"></i>
+              <p>
+                Kategori
                 <span class="right badge badge-danger">New</span>
               </p>
             </a>
