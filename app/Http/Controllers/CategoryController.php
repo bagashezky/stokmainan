@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
@@ -96,6 +96,9 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
+        $category=\App\category::find($id);
+        $d=['category'=>$category];
+        return view('admin.category.edit')->with($d);
     }
 
     /**
@@ -108,6 +111,42 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $rules=[
+
+            'name'=>'required',
+        ];
+
+        $pesan=[
+            'name.required'=>'Nama Tidak Boleh Kosong!!',
+        ];
+
+
+        $validator=Validator::make(Input::all(),$rules,$pesan);
+
+        if ($validator->fails()) {
+            return Redirect::to('admin/category/'.$id.'/edit')
+            ->withErrors($validator);
+
+        }else{
+
+            $image="";
+
+            if (!$request->file('imageFile')) {
+                # code...
+                $image=Input::get('imagePath');
+            }else{
+                $image=$request->file('imageFile')->store('categoryImages','public');
+            }
+
+            $category=\App\category::find($id);
+
+            $category->name=Input::get('name');
+            $category->save();
+
+            Session::flash('message','Data Barang Berhasil Diubah');
+
+            return Redirect::to('admin/category');
+        }
     }
 
     /**
@@ -118,6 +157,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category=\App\Category::find($id);
+        $category->delete();
+
+        Session::flash('message','Berhasil Dihapus');
+        return Redirect::to('admin/category');
     }
 }

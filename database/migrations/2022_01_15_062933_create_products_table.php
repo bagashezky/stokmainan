@@ -21,7 +21,6 @@ class CreateProductsTable extends Migration
             $table->bigInteger('price');
             $table->text('image')->default(null);
             $table->integer('qty');
-            $table->text('description');
             $table->timestamps();
         });
     }

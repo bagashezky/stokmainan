@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Category;
+use App\Product;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -17,9 +19,14 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $categories = Category::pluck('name','id');
+
         $products=\App\Product::all();
         $data=['products'=>$products];
-        return view('admin.product.index')->with($data);
+
+        return view('admin.product.index',[
+            'categories' => $categories,
+        ])->with($data);
     }
 
     /**
@@ -41,18 +48,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
+        $category_id = Category::pluck('name', 'id');
         $rules =[
             'name'=>'required',
+            'category_id'=>'required',
             'price'=>'required|integer',
             'imageFile'=>'required|mimes:jpg,png,jpeg,JPG',
-            'description'=>'required'
+            'qty'=>'required'
         ];
 
         $pesan=[
             'name.required'=>'Nama Barang Tidak Boleh Kosong',
+            'category_id'=>'Kategori tidak boleh Kosong',
             'price.required'=>'Harga Barang Tidak Boleh Kosong',
             'imageFile.required'=>'Gambar Tidak Boleh Kosong',
-            'description.required'=>'Deskripsi Tidak Boleh Kosong'
+            'qty.required'=>'Jumlah Stok Tidak Boleh Kosong'
         ];
 
         $validator=Validator::make(Input::all(),$rules,$pesan);
@@ -71,7 +82,8 @@ class ProductController extends Controller
             $product=new \App\Product;
 
             $product->name=Input::get('name');
-            $product->description=Input::get('description');
+            $product->category_id=Input::get('category_id');
+            $product->qty=Input::get('qty');
             $product->price=Input::get('price');
             $product->image=$image;
             $product->save();
@@ -124,13 +136,13 @@ class ProductController extends Controller
 
             'name'=>'required',
             'price'=>'required|integer',
-            'description'=>'required',
+            'qty'=>'required',
         ];
 
         $pesan=[
             'name.required'=>'Nama Tidak Boleh Kosong!!',
             'price.required'=>'Harga Tidak Boleh Kosong!!',
-            'description.required'=>'Deskripsi Barang Tidak Boleh Kosong!!',
+            'qty.required'=>'Jumlah Barang Tidak Boleh Kosong!!',
         ];
 
 
@@ -155,7 +167,7 @@ class ProductController extends Controller
 
             $product->name=Input::get('name');
             $product->price=Input::get('price');
-            $product->description=Input::get('description');
+            $product->qty=Input::get('qty');
             $product->image=$image;
             $product->save();
 
@@ -180,4 +192,6 @@ class ProductController extends Controller
         Session::flash('message','Berhasil Dihapus');
         return Redirect::to('admin/product');
     }
+
+
 }
