@@ -20,6 +20,17 @@
                                     {{ Form::text('name', '', ['class'=>'form-control', 'placeholder'=>'Masukkan Nama Barang']) }}
                                 </div>
                                 <div class="form-group">
+                                    <div class="col-md-2">
+                                        <div class="text-justify" >
+                                            <select class="itemName form-control form-filter" style="width:90px;" name="itemName" id="itemName">
+                                                @foreach($category_id as $category)
+                                                     <option value="{{$category_id->id}}">{{$category_id->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     {{ Form::label('price', 'Harga Barang') }}
                                     {{ Form::text('price', '', ['class'=>'form-control', 'placeholder'=>'Masukkan Harga Barang']) }}
                                 </div>
@@ -34,9 +45,9 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12">
-                                {{ Form::label('description', 'Description') }}
-                                {{ Form::textarea('description', '', ['class'=>'form-control', 'placeholder'=>'Enter description', 'rows'=>5]) }}
+                            <div class="col-md-6">
+                                {{ Form::label('qty', 'Jumlah Stok') }}
+                                {{ Form::text('qty', '', ['class'=>'form-control', 'placeholder'=>'Masukan Jumlah Stok']) }}
                             </div>
                         </div>
                     </div>

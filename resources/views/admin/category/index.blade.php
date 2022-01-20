@@ -42,12 +42,12 @@
                                 <td>{{ $category['name'] }}</td>
 
                                 <td class="text-center">
-                                    <form method="POST" action="{{ URL::to('/admin/product/'.$category['id']) }}">
+                                    <form method="POST" action="{{ URL::to('/admin/category/'.$category['id']) }}">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="_method" value="DELETE" />
                                         <div class="btn-group">
-                                            <a class="btn btn-info" href="{{ URL::to('/admin/product/'.$category['id']) }}"><i class="fa fa-eye"></i></a>
-                                            <a class="btn btn-success" href="{{ URL::to('/admin/product/'.$category['id'].'/edit') }}"><i class="fa fa-edit"></i></a>
+                                            <a class="btn btn-info" href="{{ URL::to('/admin/category/'.$category['id']) }}"><i class="fa fa-eye"></i></a>
+                                            <a class="btn btn-success" href="{{ URL::to('/admin/category/'.$category['id'].'/edit') }}"><i class="fa fa-edit"></i></a>
                                             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                         </div>
                                     </form>

@@ -33,8 +33,9 @@
                                 <th>ID</th>
                                 <th>Nama</th>
                                 <th>Harga</th>
-                                <th>Keterangan</th>
+                                <th>Jumlah Stok</th>
                                 <th>Gambar</th>
+                                <th>Kategori</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -44,9 +45,11 @@
                                 <td class="text-center">{{ $product['id'] }}</td>
                                 <td>{{ $product['name'] }}</td>
                                 <td>Rp. {{ $product['price'] }}</td>
-                                <td>{{ $product['description'] }}</td>
+                                <td>{{ $product['qty'] }}</td>
 
                                 <td class="text-center"><img src="{{ asset('storage/'.$product['image']) }}" width="100"/></td>
+                                <td>{{ $product['category_id'] }}</td>
+
                                 <td class="text-center">
                                     <form method="POST" action="{{ URL::to('/admin/product/'.$product['id']) }}">
                                         {{ csrf_field() }}
