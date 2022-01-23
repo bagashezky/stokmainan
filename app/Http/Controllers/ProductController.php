@@ -19,14 +19,14 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $categories = Category::pluck('name','id');
+        $categories = Category::orderBy('name','ASC')
+            ->get()
+            ->pluck('name','id');
 
-        $products=\App\Product::all();
+        $products= Product::all();
         $data=['products'=>$products];
 
-        return view('admin.product.index',[
-            'categories' => $categories,
-        ])->with($data);
+        return view('admin.product.index', compact('categories'))->with($data);
     }
 
     /**
@@ -34,10 +34,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
-        return view('admin.product.create');
+        $categories = Category::orderBy('name','ASC')
+            ->get()
+           ->pluck('name','id');
+        //$category_id = Category::all();
+        //)
+        return view('admin.product.create', compact('categories'));
     }
 
     /**
@@ -48,8 +53,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
-        $category_id = Category::pluck('name', 'id');
+        //$category_id = Category::all();
+        //$category_id = Category::pluck('name', 'id');
         $rules =[
             'name'=>'required',
             'category_id'=>'required',
@@ -67,12 +72,10 @@ class ProductController extends Controller
         ];
 
         $validator=Validator::make(Input::all(),$rules,$pesan);
-
         //jika data ada yang kosong
         if ($validator->fails()) {
-
             //refresh halaman
-            return Redirect::to('admin/product/create')
+            return Redirect::to('admin/product/create',compact('category_id'))
             ->withErrors($validator);
 
         }else{

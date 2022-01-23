@@ -19,17 +19,9 @@
                                     {{ Form::label('name', 'Nama Barang') }}
                                     {{ Form::text('name', '', ['class'=>'form-control', 'placeholder'=>'Masukkan Nama Barang']) }}
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-2">
-                                        <div class="text-justify" >
-                                            <select class="itemName form-control form-filter" style="width:90px;" name="itemName" id="itemName">
-                                                @foreach($category_id as $category)
-                                                     <option value="{{$category_id->id}}">{{$category_id->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                                <label >Category</label>
+                                    {!! Form::select('category_id', $categories, null, ['class' => 'form-control select', 'placeholder' => '-- Choose Category --', 'id' => 'category_id', 'required']) !!}
+                                    <span class="help-block with-errors"></span>
                                 <div class="form-group">
                                     {{ Form::label('price', 'Harga Barang') }}
                                     {{ Form::text('price', '', ['class'=>'form-control', 'placeholder'=>'Masukkan Harga Barang']) }}

@@ -48,7 +48,7 @@
                                 <td>{{ $product['qty'] }}</td>
 
                                 <td class="text-center"><img src="{{ asset('storage/'.$product['image']) }}" width="100"/></td>
-                                <td>{{ $product['category_id'] }}</td>
+                                <td>{{ $product->category->name }}</td>
 
                                 <td class="text-center">
                                     <form method="POST" action="{{ URL::to('/admin/product/'.$product['id']) }}">
