@@ -46,7 +46,7 @@
           <div class="inner">
             <h3>{{ \App\User::count() }}</h3>
 
-            <p>User Registrations</p>
+            <p>User Terdaftar</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
@@ -59,9 +59,9 @@
         <!-- small box -->
         <div class="small-box bg-danger">
           <div class="inner">
-            <h3>65</h3>
+            <h3>{{ \App\Customer::count() }}</h3>
 
-            <p>Unique Visitors</p>
+            <p>Customer</p>
           </div>
           <div class="icon">
             <i class="ion ion-pie-graph"></i>

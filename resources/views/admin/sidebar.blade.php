@@ -55,9 +55,20 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="{{URL::to('admin/customers')}}" class="nav-link">
+              <i class="nav-icon fa fa-address-book"></i>
+              <p>
+                Customer
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
+    <div>
     </div>
     <!-- /.sidebar -->
 
