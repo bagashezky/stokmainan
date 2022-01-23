@@ -19,9 +19,11 @@
                                     {{ Form::label('name', 'Nama Barang') }}
                                     {{ Form::text('name', '', ['class'=>'form-control', 'placeholder'=>'Masukkan Nama Barang']) }}
                                 </div>
+                                <div class="form-group">
                                 <label >Category</label>
                                     {!! Form::select('category_id', $categories, null, ['class' => 'form-control select', 'placeholder' => '-- Choose Category --', 'id' => 'category_id', 'required']) !!}
                                     <span class="help-block with-errors"></span>
+                                </div>
                                 <div class="form-group">
                                     {{ Form::label('price', 'Harga Barang') }}
                                     {{ Form::text('price', '', ['class'=>'form-control', 'placeholder'=>'Masukkan Harga Barang']) }}

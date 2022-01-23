@@ -121,9 +121,12 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        $categories = Category::orderBy('name','ASC')
+            ->get()
+           ->pluck('name','id');
         $product=\App\Product::find($id);
         $d=['product'=>$product];
-        return view('admin.product.edit')->with($d);
+        return view('admin.product.edit',compact('categories'))->with($d);
     }
 
     /**
@@ -135,6 +138,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $categories = Category::orderBy('name','ASC')
+            ->get()
+           ->pluck('name','id');
         $rules=[
 
             'name'=>'required',
@@ -169,6 +175,7 @@ class ProductController extends Controller
             $product=\App\Product::find($id);
 
             $product->name=Input::get('name');
+            $product->category_id=Input::get('category_id');
             $product->price=Input::get('price');
             $product->qty=Input::get('qty');
             $product->image=$image;

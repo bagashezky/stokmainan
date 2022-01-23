@@ -15,7 +15,7 @@
                 @endif
                 <div class="row">
                     <div class="col-md-12">
-                        <img src="{{ asset('storage/'.$product['image'])}}" width="100%" height="200">
+                        <img src="{{ asset('storage/'.$product['image'])}}" width="150" height="150">
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
@@ -26,20 +26,22 @@
                             {{ Form::label('price', 'Harga Barang') }}
                             {{ Form::text('price', $product['price'], ['class'=>'form-control', 'placeholder'=>'Masukkan Harga Barang']) }}
                         </div>
+                        <div class="form-group">
+                            {{ Form::label('qty', 'Jumlah Barang') }}
+                            {{ Form::text('qty', $product['qty'], ['class'=>'form-control', 'placeholder'=>'Masukkan Harga Barang']) }}
+                        </div>
                     </div>
                     <div class="col-md-6">
-
                         <div class="form-group">
                             {{ Form::hidden('imagePath',$product['image'])}}
                             {{ Form::label('image', 'Image') }}
                             {{ Form::file('imageFile', ['class'=>'form-control']) }}
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        {{ Form::label('description', 'Description') }}
-                        {{ Form::textarea('description', $product['description'], ['class'=>'form-control', 'placeholder'=>'Enter description', 'rows'=>5]) }}
+                        <div class="form-group">
+                            <label >Category</label>
+                                {!! Form::select('category_id', $categories, null, ['class' => 'form-control select', 'placeholder' => '-- Choose Category --', 'id' => 'category_id', 'required']) !!}
+                                <span class="help-block with-errors"></span>
+                            </div>
                     </div>
                 </div>
             </div>
