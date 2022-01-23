@@ -128,7 +128,6 @@ class ProductController extends Controller
         $d=['product'=>$product];
         return view('admin.product.edit',compact('categories'))->with($d);
     }
-
     /**
      * Update the specified resource in storage.
      *

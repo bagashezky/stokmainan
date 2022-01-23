@@ -10,12 +10,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <img src="{{ asset('storage/'.$product['image']) }}"
-                                height="200" width="100%"/>
+                                height="200" width="200"/>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-
                             <div class="form-group">
                                 <label for="name">Nama Barang</label>
                                 <input id="name" type="text" value="{{ $product['name'] }}" class="form-control" disabled />
@@ -27,16 +26,12 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="status">Kondisi Barang</label>
-                                <input id="status" type="text" value="{{ $product['condition'] }}" class="form-control" disabled />
+                                <label for="category_id">Kategori</label>
+                                <input id="category_id" type="text" value="{{ $product->category->name }}" class="form-control" disabled />
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
                             <div class="form-group">
-                                <label for="description">Description</label>
-                                <input id="description" type="text" value="{{ $product['description'] }}" class="form-control" disabled />
+                                <label for="qty">Jumlah Barang</label>
+                                <input id="qty" type="text" value="{{ $product['qty'] }}" class="form-control" disabled />
                             </div>
                         </div>
                     </div>
