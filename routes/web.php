@@ -26,5 +26,7 @@ Route::get('/admin/dashboard', 'DashboardController@index');
 Route::resource('/admin/product', 'ProductController');
 Route::resource('/admin/category', 'CategoryController');
 Route::resource('/admin/customers', 'CustomerController');
+Route::resource('/admin/customers', 'CustomerController');
+Route::resource('/admin/pekerja', 'SupplierController');
 
 
