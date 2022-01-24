@@ -75,6 +75,26 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="{{URL::to('admin/productin')}}" class="nav-link">
+              <i class="nav-icon fa fa-cart-plus"></i>
+              <p>
+                Produk Masuk
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{URL::to('admin/productout')}}" class="nav-link">
+              <i class="nav-icon fa fa-cart-arrow-down"></i>
+              <p>
+                Produk Keluar
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
