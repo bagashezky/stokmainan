@@ -8,6 +8,7 @@ use App\Category;
 use App\Product;
 use App\Produk_Masuk;
 use App\Supplier;
+use PDF;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -151,5 +152,11 @@ class ProdukMasukController extends Controller
 
         Session::flash('message','Berhasil Dihapus');
         return Redirect::to('admin/productin');
+    }
+    public function exportProductMasukAll()
+    {
+        $product_masuk = Produk_Masuk::all();
+        $pdf = PDF::loadView('admin.product_masuk.productMasukAllPDF',compact('product_masuk'));
+        return $pdf->stream();
     }
 }

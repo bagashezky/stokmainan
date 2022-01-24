@@ -6,6 +6,7 @@ use App\Produk_Keluar;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Customer;
+use PDF;
 use App\Category;
 use App\Produk_Masuk;
 use App\Supplier;
@@ -154,5 +155,11 @@ class ProdukKeluarController extends Controller
 
         Session::flash('message','Berhasil Dihapus');
         return Redirect::to('admin/productout');
+    }
+    public function exportProductKeluarAll()
+    {
+        $product_keluar = Produk_Keluar::all();
+        $pdf = PDF::loadView('admin.product_keluar.productKeluarAllPDF',compact('product_keluar'));
+        return $pdf->stream();
     }
 }

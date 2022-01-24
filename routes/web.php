@@ -29,5 +29,6 @@ Route::resource('/admin/customers', 'CustomerController');
 Route::resource('/admin/pekerja', 'SupplierController');
 Route::resource('/admin/productin', 'ProdukMasukController');
 Route::resource('/admin/productout', 'ProdukKeluarController');
-
+Route::get('/exportProductKeluarAll','ProdukKeluarController@exportProductKeluarAll')->name('exportPDF.productKeluarAll'); 
+Route::get('/exportProductMasukAll','ProdukMasukController@exportProductMasukAll')->name('exportPDF.productMasukAll'); 
 
