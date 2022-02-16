@@ -18,8 +18,10 @@
                      <i class="fa fa-plus"></i>
                      &nbsp; Add
                  </a>
+                 <a href="{{ route('exportPDF.productKeluarAll') }}" class="btn btn-tool">Export PDF</a>
              </div>
          </div>
+
          <div class="card-body">
             <table id="example1" class="table table-bordered table-hover">
             @if (Session::has('message'))

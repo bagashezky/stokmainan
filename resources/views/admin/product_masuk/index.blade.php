@@ -18,6 +18,7 @@
                      <i class="fa fa-plus"></i>
                      &nbsp; Add
                  </a>
+                 <a href="{{ route('exportPDF.productMasukAll') }}" class="btn btn-tool">Export PDF</a>
              </div>
          </div>
          <div class="card-body">
