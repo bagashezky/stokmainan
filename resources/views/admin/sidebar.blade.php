@@ -37,6 +37,16 @@
           </li>
 
           <li class="nav-item">
+            <a href="{{URL::to('admin/booking')}}" class="nav-link">
+              <i class="nav-icon fa fa-book"></i>
+              <p>
+                Booking
+                <span class="right badge badge-danger"></span>
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
             <a href="{{URL::to('admin/product')}}" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>

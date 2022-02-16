@@ -30,4 +30,6 @@ Route::resource('/admin/pekerja', 'SupplierController');
 Route::resource('/admin/productin', 'ProdukMasukController');
 Route::resource('/admin/productout', 'ProdukKeluarController');
 
+Route::resource('/admin/booking', 'BookingController');
+
 

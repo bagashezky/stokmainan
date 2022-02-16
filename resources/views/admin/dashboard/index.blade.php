@@ -2,8 +2,8 @@
 
 @section('content')
   <!-- DataTables -->
-  <link rel="stylesheet" href="{{ asset('lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
-  <link rel="stylesheet" href="{{ asset('lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('lte1/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('lte1/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
 
 
 <!-- /.card -->
@@ -124,16 +124,16 @@
 
 
 <!-- jQuery -->
-<script src="{{ asset('lte/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/jquery/jquery.min.js')}}"></script>
 <!-- DataTables -->
-<script src="{{ asset('lte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{ asset('lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{ asset('lte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{ asset('lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('lte/dist/js/adminlte.min.js')}}"></script>
+<script src="{{ asset('lte1/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('lte/dist/js/demo.js')}}"></script>
+<script src="{{ asset('lte1/dist/js/demo.js')}}"></script>
 <!-- page script -->
 <script>
     $(function () {

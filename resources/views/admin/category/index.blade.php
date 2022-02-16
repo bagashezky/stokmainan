@@ -12,7 +12,7 @@
         <div class="card">
             <!-- /.card-header -->
             <div class="card-header">
-                <h3 class="card-title">Kategori</h3>
+                <h3 class="card-title">Lapangan</h3>
                 <div class="card-tools">
                  <a href="{{ URL::to('/admin/category/create')}}" class="btn btn-tool">
                      <i class="fa fa-plus"></i>
@@ -31,7 +31,7 @@
                         <thead>
                             <tr class="text-center">
                                 <th>ID</th>
-                                <th>Nama</th>
+                                <th>Nama Lapangan</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>

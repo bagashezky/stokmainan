@@ -12,9 +12,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>Toko Mainan | Kayla Barbie</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{ asset('lte/plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('lte1/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{ asset('lte/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('lte1/dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -78,21 +78,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="{{ asset('lte/plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ asset('lte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('lte/dist/js/adminlte.min.js')}}"></script>
+<script src="{{ asset('lte1/dist/js/adminlte.min.js')}}"></script>
 
 <!-- DataTables -->
-<script src="{{ asset('lte/plugins/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{ asset('lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{ asset('lte/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{ asset('lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{ asset('lte1/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="{{ asset('lte/dist/js/adminlte.min.js')}}"></script>
+<script src="{{ asset('lte1/dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('lte/dist/js/demo.js')}}"></script>
 <!-- page script -->
 
 </html>
